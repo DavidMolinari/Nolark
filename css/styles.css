@@ -186,27 +186,27 @@ footer a{
 }
 
 
-@media print {
-
-    header, nav, footer, #video, #casques article div.classement { display: none; }
-    #casques article { width: 100%; height: 140px; margin: 0; }
-    #casques article img { float: left; }
-    #casques article p.prix, #casques article p.marque, #casques article p.modele, #casques article p.stockok, #casques article p.stockko { float: left; padding: 58.5px 10px; }
 
 
-
-}
-
-}
-
-@media all and (min-width: 1024px) and (max-width: 1280px) { }
- 
-@media all and (min-width: 768px) and (max-width: 1024px) {
- }
- 
-@media all and (min-width: 480px) and (max-width: 768px) {
-header {  width: auto; margin: 0; height: 160px;}
+@media all and (min-width: 768px) and (max-width: 1080px) {
+header { width: auto; margin: 0; height: 160px;}
     nav { margin-top: 0;}
+    nav ul { margin-left: 0; margin-top: 160px; padding-left: 0;}
+    nav li a { display: inline; margin-top: 1px; height: 25px; padding: 1px;}
+    #principal { width: auto; height: auto; display: inline-block;}
+    #principal article {  height: 0px; float: left; }
+    #principal aside {}
+    #sectionthema { height: auto; margin: 0 auto 0 auto; width: 100%; }
+    #sectionthema a {
+        margin-top: 250px;
+    }
+    #sectionthema article { height: auto;}
+    #sectionthema #gauche,#sectionthema #milieu,#sectionthema #droite {width: 30%; float: left;} 
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+header { background-image: none; width: auto; margin: 0; height: 160px;}
+    nav { margin-top: -160px;}
     nav ul { margin-left: 0; margin-top: 160px; padding-left: 0;}
     nav li a { display: block; margin-top: 1px; height: 25px; padding: 1px;}
     #principal { width: auto; height: auto;}
@@ -214,9 +214,13 @@ header {  width: auto; margin: 0; height: 160px;}
     #principal aside { display: none;}
     #sectionthema { height: auto; margin: 0 auto 0 auto; width: 100%; }
     #sectionthema article { height: auto;}
-    #sectionthema #gauche,#sectionthema #milieu,#sectionthema #droite {background-image: none; width: 30%; float: left;} }
- 
-@media all and (max-width: 480px) { header { background-image: none; width: auto; margin: 0; height: 160px;}
+    #sectionthema #gauche,#sectionthema #milieu,#sectionthema #droite {background-image: none; width: 30%; float: left;} 
+}
+
+
+
+@media all and (max-width: 480px) { 
+    header { background-image: none; width: auto; margin: 0; height: 160px;}
     nav { margin-top: 0;}
     nav ul { margin-left: 0; margin-top: 0; padding-left: 0;}
     nav li a { display: block; margin-top: 1px; height: 25px; padding: 1px;}
@@ -227,3 +231,4 @@ header {  width: auto; margin: 0; height: 160px;}
     #sectionthema article { height: auto;}
     #sectionthema #gauche,#sectionthema #milieu,#sectionthema #droite {background-image: none; width: 30%; float: left;}
 
+}
