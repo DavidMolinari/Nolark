@@ -1,13 +1,32 @@
 
 window.addEventListener("load", function () {
+    
+    const salaireFix = 1100.0;
+    
+    const ancien1 = 5;
+    const ancien2 = 10
+    
+    const nbVenteX5 = 50;
+    const nbVenteMulti20 = 20;
+    const nbVenteMulti50= 50;
+    const nbVenteMulti51 = 51;
+    
+    const commX5 = 0.06;
+    const commS20 = 0.02;
+    const commMulti20 = 0.04;
+    const commMult50 = 0.06;
+    const commMulti51 = 0.1;
+    
+    
+    const prixX5 = 350.0;
+    const prixS20 = 140.0;
+    const prixMulti = 180.0;
 
     var cellules = document.querySelectorAll(".simulationForm");
 
 
     for (var i = 0; i < cellules.length; i++) {
         cellules[i].addEventListener("keyup", function () {
-
-            const salaireFix = 1100.0;
 
             var S20Vendus = parseInt(window.document.querySelector("#S20").value);
             var XSpiritVendus = parseInt(window.document.querySelector("#XSpirit").value);
@@ -26,39 +45,39 @@ window.addEventListener("load", function () {
 
 // Fonction Calcul de comission des casques X5, en parametres le nombre de casques vendus
     function comissionx5(nb) {
-        if (nb < 50)
+        if (nb < nbVenteX5)
             return 0;
         else {
-            return 350.0 * 0.06 * nb;
+            return prixX5 * commX5 * nb;
         }
     }
 
 // Fonction Calcul de comission des casques S20, en parametres le nombre de casques vendus
     function comissionS20(nb) {
-        return nb * 140.0 * 0.02;
+        return nb * prixS20 * commS20;
     }
 
 // Fonction Calcul de comission des casques Multitec, en parametres le nombre de casques vendus
     function comissionMulti(nb) {
-        if (nb <= 20) {
-            return nb * 180.0 * 0.04;
+        if (nb <= nbVenteMulti20) {
+            return nb * prixMulti * commMulti20;
         }
-        else if (nb <= 50)
+        else if (nb <= nbVenteMulti50)
         {
-            return ((20 * 180.0 * 0.04) + ((nb - 20) * 180.00 * 0.06));
+            return ((nbVenteMulti20 * prixMulti * commMulti20) + ((nb - nbVenteMulti20) * prixMulti * commMult50));
         }
         else
         {
-            return (20 * 180.0 * 0.04) + (30 * 180.00 * 0.06) + ((nb - 50) * 180.0 * 0.1);
+            return (nbVenteMulti20 * prixMulti * commMulti20) + ((commMult50-nbVenteMulti20) * prixMulti * commMult50) + ((nb - nbVenteMulti50) * prixMulti * commMulti51);
         }
     }
 // Fonction Calcul de comission d'ancienneté  : Le nombre d'année et le salaire fixe en param
     function aciennete(nbAnnee, salaireFix) {
-        if (nbAnnee <= 5)
+        if (nbAnnee <= ancien1)
         {
             return 0.0;
         }
-        else if (nbAnnee > 5 && nbAnnee <= 10)
+        else if (nbAnnee > ancien1 && nbAnnee <= ancien2)
         {
             return salaireFix * 0.03;
         }
