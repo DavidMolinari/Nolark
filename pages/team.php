@@ -9,19 +9,17 @@
         <link rel="stylesheet" href="../css/team.css" />
     </head>
     <body>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="route.html">Route</a></li>
-                    <li><a href="cross.html">Cross</a></li>
-                    <li><a href="piste.html">Piste</a></li>
-                    <li><a href="enfants.html">Enfants</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="nous-contacter.html">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="../index.php">Accueil</a></li>
+              <?php
+              include '../includes/headerPages.php';
+               ?>
+        </ul>
+        </nav>
+        ?>
+      </header>
         <br />
         <h1>Nous reconnaître :</h1>
         <article id="reco">
