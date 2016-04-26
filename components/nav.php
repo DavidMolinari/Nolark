@@ -1,13 +1,13 @@
 <nav>
     <ul>
-        <li><a class="hvr-buzz" href="index.html">Accueil</a></li>
-        <li><a href="pages/route.html">Route</a></li>
-        <li><a href="pages/cross.html">Cross</a></li>
-        <li><a href="pages/piste.html">Piste</a></li>
-        <li><a href="pages/enfants.html">Enfants</a></li>
-        <li><a href="pages/team.html">Team</a></li>
-        <li><a href="pages/nous-contacter.html">Contact</a></li>
-        <li><a href="pages/simulation.html">Simulation</a></li>
+        <li><a class="hvr-buzz" href="../index.php">Accueil</a></li>
+        <li><a href="../pages/route.php">Route</a></li>
+        <li><a href="../pages/cross.php">Cross</a></li>
+        <li><a href="../pages/piste.php">Piste</a></li>
+        <li><a href="../pages/enfants.php">Enfants</a></li>
+        <li><a href="../pages/team.php">Team</a></li>
+        <li><a href="../pages/nous-contacter.php">Contact</a></li>
+        <li><a href="../pages/simulation.php">Simulation</a></li>
 
     </ul>
 </nav>
