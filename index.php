@@ -32,9 +32,9 @@ include "components/head.php";
 </section>
 <section id="sectionthema">
     <h1>Catégories les plus populaires</h1>
-    <article id="gauche"><a href="pages/route.html">Route</a></article>
-    <article id="milieu"><a href="pages/cross.html">Cross</a></article>
-    <article id="droite"><a href="pages/piste.html">Piste</a></article>
+    <article id="gauche"><a href="pages/route.php">Route</a></article>
+    <article id="milieu"><a href="pages/cross.php">Cross</a></article>
+    <article id="droite"><a href="pages/piste.php">Piste</a></article>
 </section>
 <?php include "components/footer.php"; ?>
 </body>
