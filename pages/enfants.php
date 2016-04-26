@@ -1,8 +1,7 @@
 ﻿<!doctype html>
 <html lang="fr-FR">
-<?php
-include '../includes/head.php' ?>
-    <body>
+<?php include '../includes/head.php' ?>
+  <body>
       <?php include '../includes/headerPages.php'; ?>
         <section id="video">
             <article>

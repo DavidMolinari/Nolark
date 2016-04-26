@@ -1,7 +1,6 @@
 ﻿<!doctype html>
 <html lang="fr-FR">
-  <?php
-  include '../includes/head.php' ?>
+  <?php include '../includes/head.php' ?>
     <body>
       <?php include '../includes/headerPages.php'; ?>
 
