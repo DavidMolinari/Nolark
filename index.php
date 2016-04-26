@@ -8,19 +8,7 @@
         <link rel="stylesheet" href="css/styles.css" />
     </head>
     <body>
-        <header>
-
-          <nav>
-            <ul>
-              <li><a href="index.php">Accueil</a></li>
-                <?php
-                  include 'includes/header.php';
-                 ?>
-          </ul>
-          </nav>
-
-          ?>
-        </header>
+      <?php include 'includes/header.php'; ?>
         <section id="principal">
             <article>
                 <img src="images/post-it.png" alt="Post-It : Penser à rentrer en vie" />

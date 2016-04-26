@@ -3,17 +3,7 @@
 <?php
 include '../includes/head.php' ?>
     <body>
-      <header>
-        <nav>
-          <ul>
-            <li><a href="../index.php">Accueil</a></li>
-              <?php
-              include '../includes/headerPages.php';
-               ?>
-        </ul>
-        </nav>
-        ?>
-      </header>
+      <?php include '../includes/headerPages.php'; ?>
         <br />
         <section id="formulaire">
           <form id="form_contact" name="form_contact" action="#">
