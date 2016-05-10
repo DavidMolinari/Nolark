@@ -7,8 +7,8 @@
                 $meh = "cross";
             } else if ($pageActuelle === "route.php") {
                 $meh = "route";
-            } else if ($pageActuelle === "enfant.php") {
-                $meh = "enfant";
+            } else if ($pageActuelle === "enfants.php") {
+                $meh = "enfants";
             } else if ($pageActuelle === "piste.php") {
                 $meh = "piste";
             }
@@ -27,10 +27,16 @@ $res = $cnx->query($req);
  echo '<article>';
  echo '<img src="../images/casques/', $ligne->libelle, '/', $ligne->image,
  '" alt="', $ligne->modele, '" />';
+ if ($ligne->stock <= 0) {
+    echo '<p class="stockko"><abbr data-tip="sur commandes uniquement">stock</abbr></p>';
+} else{
+    echo '<p class="stockok"><abbr data-tip="plus que', $ligne->stock, 'en stock">stock</abbr></p>';
+}
  echo '<p class="prix">',$ligne->prix, '€', '</p>';
 echo '<p class="marque">', $ligne->nom, '</p>';
 echo '<p class="modele">', $ligne->modele, '</p>';
 echo '<p class=" classement classement', $ligne->classement, '"></p>';
 
+ 
  echo '</article>';
  }
