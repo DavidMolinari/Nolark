@@ -2,7 +2,7 @@
 <html lang="fr-FR">
   <?php include '../includes/head.php' ?>
     <body>
-      <?php include '../includes/headerPages.php'; ?>
+      <?php include '../includes/header.inc.php'; ?>
 
         <section id="casques">
             <!-- ------------------------- LIGNE N°1 ------------------------- -->
