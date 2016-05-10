@@ -1,5 +1,9 @@
 <?php
-            $scriptName = filter_input(INPUT_SERVER, "SCRIPT_NAME");
+// Inclusion de Twig
+include_once('Twig/Autoloader.php');
+Twig_Autoloader::register();
+try {
+    $scriptName = filter_input(INPUT_SERVER, "SCRIPT_NAME");
             $pageActuelle = substr($scriptName, strrpos($scriptName, "/") + 1);
             if ($pageActuelle === "index.php") {
                 $meh = "./";
@@ -12,7 +16,6 @@
             } else if ($pageActuelle === "piste.php") {
                 $meh = "piste";
             }
-
             
 $cnx = new PDO('mysql:host=192.168.56.102;dbname=nolark', 'nolarkuser', 'nolarkpwd');
 $req = 'SELECT casque.id, nom, modele, libelle, prix, classement, image, stock';
@@ -20,23 +23,27 @@ $req .= ' FROM casque INNER JOIN type ON casque.type=type.id';
 $req .= ' INNER JOIN marque ON casque.marque=marque.id';
 $req .= ' WHERE libelle = \''.$meh.'\'';
 
+ $res = $cnx->prepare($req);
+ $res->execute();
+ $res->fetch(PDO::FETCH_OBJ);
 
-$res = $cnx->query($req);
+ // Fermeture connexion
+ unset($cnx);
 
- while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
- echo '<article>';
- echo '<img src="../images/casques/', $ligne->libelle, '/', $ligne->image,
- '" alt="', $ligne->modele, '" />';
- if ($ligne->stock <= 0) {
-    echo '<p class="stockko"><abbr data-tip="sur commandes uniquement">stock</abbr></p>';
-} else{
-    echo '<p class="stockok"><abbr data-tip="plus que', $ligne->stock, 'en stock">stock</abbr></p>';
+ // Définition du répertoire vers les templates
+ $loader = new Twig_Loader_Filesystem('../tpl');
+  // Initialisation de l'environnement Twig
+ $twig = new Twig_Environment($loader, array(
+ 'cache' => false,
+ ));
+ // Chargemement du template
+ $template = $twig->loadTemplate('casques.twig');
+
+ // Affectation des variables du template
+ echo $template->render(array(
+ 'casques' => $res
+ ));
+} catch (PDOException $e) {
+ echo 'Erreur: ' . $e->getMessage();
 }
- echo '<p class="prix">',$ligne->prix, '€', '</p>';
-echo '<p class="marque">', $ligne->nom, '</p>';
-echo '<p class="modele">', $ligne->modele, '</p>';
-echo '<p class=" classement classement', $ligne->classement, '"></p>';
-
- 
- echo '</article>';
- }
+?>

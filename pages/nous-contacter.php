@@ -3,7 +3,7 @@
 <?php include '../includes/head.php' ?>
   <body>
       <?php include '../includes/headerPages.php'; ?>
-        <h1>Nous localiser :</h1>
+        <h1>Nous localiser  :</h1>
 
 
         <article id="geoloc">

@@ -1,0 +1,27 @@
+{% for casque in casques %}
+ <article>
+ <img src="../images/casques/{{ casque.libelle }}/{{ casque.image }}"
+ alt="{{ casque.modele }}" />
+ {% if casque.stock == -1 %}
+ <p class="stockko"><abbr data-tip="Sur commande uniquement">stock</abbr></p>
+ {% elseif casque.stock >= 10 %}
+ <p class="stockok">
+ <abbr data-tip="{{ casque.stock }} casques en stock">stock</abbr>
+ </p>
+ {% else %}
+ <p class="stockok">
+ <abbr data-tip="Plus que {{ casque.stock }} casques en stock...">
+ stock
+ </abbr>
+ </p>
+ {% endif %}
+ <p class="prix">{{ casque.prix }}€</p>
+ <p class="marque">{{ casque.nom }}</p>
+ <p class="modele">{{ casque.modele }}</p>
+ {% if casque.classement == 5 %}
+ <div class="classement classement0{{ casque.classement }}"></div>
+ {% else %}
+ <div class="classement classement{{ casque.classement }}"></div>
+ {% endif %}
+ </article>
+{% endfor %}
